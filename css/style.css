@@ -8,6 +8,7 @@
     --White: hsl(0, 0%, 100%);
     --background-pink: hsl(275, 100%, 97%);
     --Grayish-purple: hsl(292, 16%, 49%);
+    --hover-purple: hsl(293, 52%, 37%);
     --Dark-purple: hsl(292, 42%, 14%);
 }
 
@@ -90,12 +91,21 @@ section {
     color: var(--Dark-purple);
 }
 
+.question:hover {
+    cursor: url("../assets/images/icons8-cursor-25.png"), pointer;
+    color: var(--hover-purple);
+}
+
 .expend-button {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
     background-color: var(--White);
     border:none;
+}
+
+.expend-button:hover {
+    cursor: url("../assets/images/icons8-cursor-25.png"), pointer;
 }
 
 .answer {
