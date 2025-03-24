@@ -3,16 +3,13 @@ const expendButtons = document.querySelectorAll(".expend-button");
 const buttonIcons = document.querySelectorAll(".button-icon");
 const answers = document.querySelectorAll(".answer");
 
-
-expendButtons.forEach((button) => {
-   button.addEventListener("click", ()=> {
+function toggleAnswer(element,button) {
     const controlledAnswerId = button.getAttribute("aria-controls");
     const controlledAnswer = document.getElementById(controlledAnswerId);
     const buttonIcon = button.querySelector("img");
 
     if (controlledAnswer) {
         controlledAnswer.classList.toggle("hidden");
-
         if (controlledAnswer.classList.contains("hidden")) {
             button.setAttribute("aria-expended","false");
             buttonIcon.src = "./assets/images/icon-plus.svg";
@@ -24,5 +21,16 @@ expendButtons.forEach((button) => {
             buttonIcon.alt = ""
         }
     }
-   })
+}
+
+expendButtons.forEach((button) => {
+   button.addEventListener("click", ()=> {
+    toggleAnswer(null,button);
+})
+})
+
+questionTexts.forEach((question, index) => {
+    question.addEventListener("click", ()=> {
+        toggleAnswer(question, expendButtons[index])
+    })
 })
