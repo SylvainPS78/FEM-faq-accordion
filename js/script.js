@@ -1,5 +1,5 @@
 const questionTexts = document.querySelectorAll(".question");
-const expendButtons = document.querySelectorAll(".expend-button");
+const expandButtons = document.querySelectorAll(".expand-button");
 const buttonIcons = document.querySelectorAll(".button-icon");
 const answers = document.querySelectorAll(".answer");
 const pattern = document.getElementById("pattern");
@@ -12,12 +12,12 @@ function toggleAnswer(element,button) {
     if (controlledAnswer) {
         controlledAnswer.classList.toggle("hidden");
         if (controlledAnswer.classList.contains("hidden")) {
-            button.setAttribute("aria-expended","false");
+            button.setAttribute("aria-expanded","false");
             buttonIcon.src = "./assets/images/icon-plus.svg";
             buttonIcon.alt = ""
         }
         else {
-            button.setAttribute("aria-expended","true");
+            button.setAttribute("aria-expanded","true");
             buttonIcon.src = "./assets/images/icon-minus.svg";
             buttonIcon.alt = ""
         }
@@ -37,7 +37,7 @@ updatePattern();
 
 window.addEventListener("resize", updatePattern);
 
-expendButtons.forEach((button) => {
+expandButtons.forEach((button) => {
    button.addEventListener("click", ()=> {
     toggleAnswer(null,button);
 })
@@ -45,7 +45,7 @@ expendButtons.forEach((button) => {
 
 questionTexts.forEach((question, index) => {
     question.addEventListener("click", ()=> {
-        toggleAnswer(question, expendButtons[index])
+        toggleAnswer(question, expandButtons[index])
     })
 })
 

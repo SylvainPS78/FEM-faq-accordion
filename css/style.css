@@ -99,7 +99,7 @@ section {
     color: var(--hover-purple);
 }
 
-.expend-button {
+.expand-button {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
@@ -107,7 +107,7 @@ section {
     border:none;
 }
 
-.expend-button:hover {
+.expand-button:hover {
     cursor: url("../assets/images/icons8-cursor-25.png"), pointer;
 }
 
