@@ -62,7 +62,7 @@ main {
     padding: 20px;
     border-radius: 10px;
     margin-top: 150px; /* Ou essayer en prop ex: 15vh */
-    width: clamp(300px, 90vw, 600px);
+    width: clamp(300px, 90vw, 500px);
     gap:30px;
 }
 
@@ -118,7 +118,12 @@ h1 {
     color: var(--Dark-purple);
 }
 
-
-
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media (width > 750px) {
+ 
+    main {
+        width: clamp(500px, 60vw, 800px);
+    }
+}
